@@ -1,0 +1,404 @@
+/* ===================================
+   CSS RESET & BASE STYLES
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===================================
+   TYPOGRAPHY & COLOR VARIABLES
+   Typography-forward design inspired by Craig Mod and Robin Sloan
+   =================================== */
+
+:root {
+    /* Colors - minimal palette */
+    --color-text: #1a1a1a;
+    --color-text-light: #666;
+    --color-border: #e0e0e0;
+    --color-background: #ffffff;
+    --color-accent: #333;
+
+    /* Typography */
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+    /* Spacing - generous whitespace */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+    --space-xxl: 6rem;
+
+    /* Layout */
+    --max-width: 800px;
+    --border-radius: 2px;
+}
+
+/* ===================================
+   BASE TYPOGRAPHY
+   =================================== */
+
+body {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    padding: var(--space-md);
+}
+
+/* Headings use sans-serif for contrast */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-accent);
+}
+
+h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-lg);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+a:hover {
+    text-decoration-color: var(--color-accent);
+}
+
+/* ===================================
+   SITE HEADER & NAVIGATION
+   =================================== */
+
+.site-header {
+    max-width: var(--max-width);
+    margin: 0 auto var(--space-xxl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.5px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--color-text-light);
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* Active nav link indicator */
+.nav-link.active {
+    color: var(--color-accent);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+}
+
+/* ===================================
+   MAIN CONTENT AREA
+   =================================== */
+
+.site-main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    min-height: 60vh;
+}
+
+/* Section visibility - only show active section */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-title {
+    margin-bottom: var(--space-xl);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+/* ===================================
+   PROJECT CARDS
+   Expandable/collapsible card design
+   =================================== */
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.project-card {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    cursor: pointer;
+}
+
+/* Card header - always visible */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xs);
+}
+
+.project-title {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    flex: 1;
+}
+
+.project-date {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    white-space: nowrap;
+}
+
+/* Expand/collapse indicator */
+.expand-indicator {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: var(--space-xs);
+    user-select: none;
+}
+
+/* Card content - hidden by default */
+.project-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.project-card.expanded .project-content {
+    max-height: 5000px; /* Large enough for any content */
+    margin-top: var(--space-md);
+}
+
+.project-card.expanded .expand-indicator::before {
+    content: '− ';
+}
+
+.project-card:not(.expanded) .expand-indicator::before {
+    content: '+ ';
+}
+
+/* Project description */
+.project-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+}
+
+/* Project images */
+.project-images {
+    margin-bottom: var(--space-md);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--space-sm);
+    border-radius: var(--border-radius);
+}
+
+/* Video embeds */
+.project-videos {
+    margin-bottom: var(--space-md);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: var(--space-sm);
+    border-radius: var(--border-radius);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Project links */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.project-link {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--color-accent);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+}
+
+.project-link:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    color: var(--color-background);
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+.site-footer {
+    max-width: var(--max-width);
+    margin: var(--space-xxl) auto 0;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.site-footer p {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   Mobile-first approach with adjustments for larger screens
+   =================================== */
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+        padding: var(--space-sm);
+    }
+
+    .site-header {
+        margin-bottom: var(--space-xl);
+    }
+
+    .site-title {
+        font-size: 1.25rem;
+    }
+
+    .nav-list {
+        gap: var(--space-sm);
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    .project-date {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    body {
+        padding: var(--space-lg);
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    body {
+        font-size: 19px;
+    }
+
+    .site-header {
+        margin-bottom: var(--space-xxl);
+    }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+
+/* Hidden class for accessibility */
+.hidden {
+    display: none;
+}
+
+/* Empty state for sections with no projects */
+.empty-state {
+    font-family: var(--font-sans);
+    color: var(--color-text-light);
+    font-style: italic;
+    padding: var(--space-xl) 0;
+    text-align: center;
+}

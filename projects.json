@@ -1,0 +1,91 @@
+[
+  {
+    "title": "The Frank Show",
+    "description": "A long-form exploration of the art of walking and its relationship to thinking and creativity. This piece examines how the simple act of putting one foot in front of the other can unlock new perspectives and ideas.",
+    "date": "2024-11-15",
+    "category": "words",
+    "images": [],
+    "videoEmbeds": [],
+    "links": [
+      {
+        "label": "Read on Medium",
+        "url": "https://example.com/walking"
+      }
+    ]
+  },
+  {
+    "title": "Photography Series: Urban Silence",
+    "description": "A collection of photographs capturing quiet moments in bustling cities. Each image explores the contrast between urban density and unexpected pockets of solitude.",
+    "date": "2024-10-22",
+    "category": "pictures",
+    "images": [
+      "https://via.placeholder.com/800x600/e8e8e8/666666?text=Urban+Silence+1",
+      "https://via.placeholder.com/800x600/e8e8e8/666666?text=Urban+Silence+2",
+      "https://via.placeholder.com/800x600/e8e8e8/666666?text=Urban+Silence+3"
+    ],
+    "videoEmbeds": [],
+    "links": []
+  },
+  {
+    "title": "Performance: Echoes in the Archive",
+    "description": "A multimedia performance piece that recontextualizes archival audio recordings through live improvisation and spatial sound design. Premiered at the Contemporary Arts Center.",
+    "date": "2024-09-08",
+    "category": "performances",
+    "images": [
+      "https://via.placeholder.com/800x600/e8e8e8/666666?text=Performance+Still"
+    ],
+    "videoEmbeds": [
+      "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    ],
+    "links": [
+      {
+        "label": "Event Details",
+        "url": "https://example.com/echoes"
+      }
+    ]
+  },
+  {
+    "title": "Research: The Poetics of Computing",
+    "description": "An investigation into how computational thinking intersects with creative practice. This ongoing research explores historical connections between early computing and literary experimentation.",
+    "date": "2024-08-12",
+    "category": "research",
+    "images": [],
+    "videoEmbeds": [],
+    "links": [
+      {
+        "label": "Research Notes",
+        "url": "https://example.com/poetics-computing"
+      },
+      {
+        "label": "Bibliography",
+        "url": "https://example.com/bibliography"
+      }
+    ]
+  },
+  {
+    "title": "Micro-essay: On Revision",
+    "description": "A brief meditation on the recursive nature of editing and the relationship between iteration and insight.",
+    "date": "2024-07-30",
+    "category": "words",
+    "images": [],
+    "videoEmbeds": [],
+    "links": []
+  },
+  {
+    "title": "Portrait Series: Makers",
+    "description": "Environmental portraits of craftspeople and artists in their studios. Each photograph is accompanied by a short interview about process and practice.",
+    "date": "2024-06-18",
+    "category": "pictures",
+    "images": [
+      "https://via.placeholder.com/800x600/e8e8e8/666666?text=Maker+Portrait+1",
+      "https://via.placeholder.com/800x600/e8e8e8/666666?text=Maker+Portrait+2"
+    ],
+    "videoEmbeds": [],
+    "links": [
+      {
+        "label": "View Full Series",
+        "url": "https://example.com/makers"
+      }
+    ]
+  }
+]

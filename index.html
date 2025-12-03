@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Header with Navigation -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <h1 class="site-title">Portfolio</h1>
+            <ul class="nav-list">
+                <li><a href="#words" class="nav-link active" data-section="words">Words</a></li>
+                <li><a href="#pictures" class="nav-link" data-section="pictures">Pictures</a></li>
+                <li><a href="#performances" class="nav-link" data-section="performances">Performances</a></li>
+                <li><a href="#research" class="nav-link" data-section="research">Research</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="site-main">
+        <!-- Words Section -->
+        <section id="words" class="section active">
+            <h2 class="section-title">Words</h2>
+            <div class="projects-container" data-category="words">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Pictures Section -->
+        <section id="pictures" class="section">
+            <h2 class="section-title">Pictures</h2>
+            <div class="projects-container" data-category="pictures">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Performances Section -->
+        <section id="performances" class="section">
+            <h2 class="section-title">Performances</h2>
+            <div class="projects-container" data-category="performances">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section">
+            <h2 class="section-title">Research</h2>
+            <div class="projects-container" data-category="research">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
