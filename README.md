@@ -242,7 +242,7 @@ Works in all modern browsers:
 
 ## Design Philosophy
 
-This site is inspired by the typography-forward, content-first approach of designers and writers like Craig Mod and Robin Sloan:
+This site is inspired by the typography-forward, content-first approaches.
 
 - **Generous whitespace**: Let content breathe
 - **Readable typography**: Serif body text, clear hierarchy
